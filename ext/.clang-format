@@ -1,0 +1,5 @@
+# -*- mode: yaml; -*-
+
+BasedOnStyle: LLVM
+IndentWidth: 4
+BreakBeforeBraces: Linux
