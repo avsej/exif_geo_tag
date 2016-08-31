@@ -1,1 +1,60 @@
 Ruby EXIF geo tagger
+
+Usage:
+
+    require 'exif_geo_tag'
+
+    tags = {
+      _latitude: 52.5708272,
+      _longitude: 23.8014078,
+      _altitude: 20,
+      _timestamp: Time.now
+    }
+    ExifGeoTag.write_tag('/tmp/write-exif.jpg', tags)
+
+The method returns old EXIF values.
+
+Accessible fields:
+
+    :version_id
+    :latitude_ref
+    :latitude
+    :longitude_ref
+    :longitude
+    :altitude_ref
+    :altitude
+    :time_stamp
+    :date_stamp
+    :satellites
+    :status
+    :measure_mode
+    :dop
+    :speed_ref
+    :speed
+    :track_ref
+    :track
+    :img_direction_ref
+    :img_direction
+    :map_datum
+    :dest_latitude_ref
+    :dest_latitude
+    :dest_longitude_ref
+    :dest_longitude
+    :dest_bearing_ref
+    :dest_bearing
+    :dest_distance_ref
+    :dest_distance
+    :processing_method
+    :area_information
+    :differential
+
+Virtual fields, which helps with type conversion:
+
+     :_latitude  (float <=> Rational triplet)
+     :_longitude (float <=> Rational triplet)
+     :_altitude  (float <=> Rational)
+     :_timestamp (Time  <=> [:time_stamp (Rational), :date_stamp (String)]
+
+Read about meaning and type of the fields in the EXIF 2.2 spec:
+
+http://exif.org/Exif2-2.PDF

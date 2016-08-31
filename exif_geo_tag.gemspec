@@ -2,7 +2,7 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'exif/version'
+require 'exif_geo_tag/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'exif_geo_tag'
@@ -16,5 +16,5 @@ Gem::Specification.new do |spec|
   spec.files         = Dir['lib/**/*.rb', 'ext/**/*.{h,c}']
   spec.extensions    = ['ext/extconf.rb']
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rake-compiler'
+  spec.add_development_dependency 'rake-compiler', '~> 0'
 end
